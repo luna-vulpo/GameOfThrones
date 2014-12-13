@@ -5,4 +5,4 @@
  * @author arek
  *
  */
-package gameofthrones.boardserver;
+package pl.gameofthrones.boardserver;

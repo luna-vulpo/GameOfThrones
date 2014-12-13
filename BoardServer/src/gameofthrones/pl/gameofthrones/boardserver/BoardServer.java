@@ -1,4 +1,4 @@
-package gameofthrones.boardserver;
+package pl.gameofthrones.boardserver;
 
 public class BoardServer {
 
