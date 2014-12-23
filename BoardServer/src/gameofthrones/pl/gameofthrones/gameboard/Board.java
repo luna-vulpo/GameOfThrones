@@ -12,6 +12,17 @@ import pl.gameofthrones.gameboard.fields.*;
  *
  */
 public final class Board {
-
+    /**
+     * not lazy thread safe singleton
+     */
+    private static volatile Board mBoard = new Board(); 
     Field[] fields = new Field[40];
+
+    
+    private Board(){}
+    
+    public static Board getBoard(){
+        return mBoard;
+    }
+    
 }
