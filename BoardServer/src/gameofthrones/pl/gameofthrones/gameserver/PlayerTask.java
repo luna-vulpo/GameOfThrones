@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Gamer implements Runnable {
+public final class PlayerTask implements Runnable {
 
     private final Socket mGamerSocket;
-    private  BufferedInputStream mIn;
-    private  PrintWriter mOut;
-    private boolean mRun;
-    public Gamer(Socket clientSocket) {
+    private BufferedInputStream mIn;
+    private PrintWriter mOut;
+    private boolean mRun = true;
+    
+    public PlayerTask(Socket clientSocket) {
         mGamerSocket = clientSocket;
 
     }
