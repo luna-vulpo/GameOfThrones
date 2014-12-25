@@ -8,4 +8,9 @@ package pl.gameofthrones.gameboard.fields;
  */
 public abstract class Land extends Field {
 
+    Land(int id, String name) {
+        super(id, name);
+        
+    }
+
 }

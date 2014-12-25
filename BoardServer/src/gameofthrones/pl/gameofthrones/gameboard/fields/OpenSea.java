@@ -9,4 +9,9 @@ package pl.gameofthrones.gameboard.fields;
 
 public final class OpenSea extends Sea {
 
+    public OpenSea(int id, String name) {
+        super(id, name);
+     
+    }
+
 }
