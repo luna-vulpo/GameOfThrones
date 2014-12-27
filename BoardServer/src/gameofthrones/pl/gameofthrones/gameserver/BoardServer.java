@@ -62,7 +62,8 @@ public class BoardServer {
 
     private void startGameManager() {
         //first dump implementation
-        new Thread(new GameManager()).start();
+        GameManager.getGameManager().setBoard(mBoardBuilder.build());
+        new Thread(GameManager.getGameManager()).start();
         
     }
 }

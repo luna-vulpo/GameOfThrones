@@ -77,7 +77,7 @@ public final class Board {
            return this;
         }
   
-       Board build(){           
+       public Board build(){           
            return new Board(players.toArray(new Player[0]));
        }
         

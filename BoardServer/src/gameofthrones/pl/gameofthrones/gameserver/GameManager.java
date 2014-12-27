@@ -1,5 +1,7 @@
 package pl.gameofthrones.gameserver;
 
+import pl.gameofthrones.gameboard.Board;
+
 public final class GameManager implements Runnable {
 
     /**
@@ -24,5 +26,10 @@ public final class GameManager implements Runnable {
     
     public void stop(){
         mRan = false;
+    }
+
+    public void setBoard(Board build) {
+        // TODO Auto-generated method stub
+        
     }
 }
