@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public final class PlayerTask implements Runnable {
+import pl.gameofthrones.gameboard.Player;
+
+public final class PlayerTask implements Runnable, Player {
 
     private final Socket mGamerSocket;
     private BufferedInputStream mIn;
     private PrintWriter mOut;
-    private boolean mRun = true;
+    private boolean mRan = true;
     
     public PlayerTask(Socket clientSocket) {
         mGamerSocket = clientSocket;
@@ -28,7 +30,7 @@ public final class PlayerTask implements Runnable {
             return;
         }
         
-        while(mRun){
+        while(mRan){
             // do thread work
         }
         
@@ -48,7 +50,7 @@ public final class PlayerTask implements Runnable {
     }
     
     public void stop(){
-        mRun = false;
+        mRan = false;
     }
 
 }

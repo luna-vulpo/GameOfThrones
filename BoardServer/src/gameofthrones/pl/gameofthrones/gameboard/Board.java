@@ -69,7 +69,7 @@ public final class Board {
         * @return
         * @throws TooManyPlayersException
         */
-       Builder addPlayer(Player player) throws TooManyPlayersException {
+       public Builder addPlayer(Player player) throws TooManyPlayersException {
            if(players.size() >= 6)
                throw new TooManyPlayersException();
                
@@ -78,7 +78,7 @@ public final class Board {
         }
   
        Board build(){           
-           return new Board();
+           return new Board(players.toArray(new Player[0]));
        }
         
        public class TooManyPlayersException extends Exception {
