@@ -1,4 +1,4 @@
-package pl.gameofthrones.gameboard.pices;
+package pl.gameofthrones.gameboard.pieces;
 
 /**
  * 
@@ -6,6 +6,6 @@ package pl.gameofthrones.gameboard.pices;
  * @author arek
  *
  */
-public final class Infantryman extends Pice{
+public final class Footman extends Piece{
 
 }

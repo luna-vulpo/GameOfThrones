@@ -6,6 +6,6 @@ package pl.gameofthrones.gameboard.tokens;
  * @author arek
  *
  */
-public final class DefendOrder extends OrderToken {
+public final class DefenceOrder extends OrderToken {
 
 }

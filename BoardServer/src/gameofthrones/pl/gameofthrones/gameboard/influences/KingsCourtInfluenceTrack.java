@@ -6,6 +6,6 @@ package pl.gameofthrones.gameboard.influences;
  * @author arek
  *
  */
-public final class KingsCourtfluance extends Influance {
+public final class KingsCourtInfluenceTrack extends InfluenceTrack {
 
 }

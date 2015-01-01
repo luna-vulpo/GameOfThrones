@@ -5,6 +5,6 @@ package pl.gameofthrones.gameboard.influences;
  * @author arek
  *
  */
-public abstract class Influance {
+public abstract class InfluenceTrack {
 
 }

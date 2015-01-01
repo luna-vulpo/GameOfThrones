@@ -30,7 +30,7 @@ public final class Board {
        fields[0] = new OpenSea(0,"Bay of Ice");
        fields[1] = new Castle(1,"Castle Black");
        fields[2] = new OpenSea(2,"The Shivearing Sea");
-       fields[3] = new Fortress(3,"Winterfell");
+       fields[3] = new Stronghold(3,"Winterfell");
        fields[4] = new Castle(4,"Karnhold");
 //       fields[2] = new OpenSea(2,"The Shivearing Sea");
 //       fields[2] = new OpenSea(2,"The Shivearing Sea");

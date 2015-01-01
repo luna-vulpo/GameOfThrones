@@ -2,13 +2,13 @@ package pl.gameofthrones.gameboard.fields;
 
 /**
  * 
- * pl: forteca
+ * pl: twierdza
  * @author arek
  *
  */
-public final class Fortress extends Land {
+public final class Stronghold extends Land {
 
-    public Fortress(int id, String name) {
+    public Stronghold(int id, String name) {
         super(id, name);
 
     }

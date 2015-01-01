@@ -1,4 +1,4 @@
-package pl.gameofthrones.gameboard.pices;
+package pl.gameofthrones.gameboard.pieces;
 
 /**
  * 
@@ -6,6 +6,6 @@ package pl.gameofthrones.gameboard.pices;
  * @author arek
  *
  */
-public final class SiegeEngin extends Pice {
+public final class SiegeEngine extends Piece {
 
 }
