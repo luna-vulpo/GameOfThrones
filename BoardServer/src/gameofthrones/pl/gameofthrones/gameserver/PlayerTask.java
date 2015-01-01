@@ -1,19 +1,25 @@
 package pl.gameofthrones.gameserver;
 
-import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
 import pl.gameofthrones.gameboard.Player;
+import pl.gameofthrones.gameserver.protocol.QueryServer;
+
+import com.google.gson.Gson;
 
 public final class PlayerTask implements Runnable, Player {
 
     private final Socket mGamerSocket;
-    private BufferedInputStream mIn;
+    private BufferedReader mIn;
     private PrintWriter mOut;
     private boolean mRan = true;
-    
+
+    Gson gson = new Gson();
+
     public PlayerTask(Socket clientSocket) {
         mGamerSocket = clientSocket;
 
@@ -22,31 +28,39 @@ public final class PlayerTask implements Runnable, Player {
     @Override
     public void run() {
         try {
-            mIn = new BufferedInputStream(mGamerSocket.getInputStream());
+            mIn = new BufferedReader(new InputStreamReader(mGamerSocket.getInputStream()));
             mOut = new PrintWriter(mGamerSocket.getOutputStream(),true);
-        }
-        catch (IOException e) {           
-            e.printStackTrace();
-            return;
-        }
-        
-        while(mRan){
-            // do thread work
-        }
-        
-        //finish the task
-        
-        try {
-            mOut.close();
-            mIn.close();
-            mGamerSocket.close();
+
+            String clientQuery = mIn.readLine();
+            
+            QueryServer qs = gson.fromJson(clientQuery, QueryServer.class);
+            
+            
+            while(mRan){
+                // do thread work
+                
+            }
 
         }
         catch (IOException e) {
             e.printStackTrace();
+            return;
         }
+        finally {
 
-        
+            // finish the task
+
+            try {
+                mOut.close();
+                mIn.close();
+                mGamerSocket.close();
+
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
     
     public void stop(){
