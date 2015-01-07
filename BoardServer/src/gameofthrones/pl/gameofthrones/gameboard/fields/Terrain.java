@@ -7,7 +7,7 @@ package pl.gameofthrones.gameboard.fields;
  */
 public final class Terrain extends Land {
 
-    Terrain(int id, String name) {
+    public Terrain(int id, String name) {
         super(id, name);
 
     }
