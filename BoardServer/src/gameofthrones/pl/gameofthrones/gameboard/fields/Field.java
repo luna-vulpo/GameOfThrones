@@ -3,6 +3,8 @@ package pl.gameofthrones.gameboard.fields;
 import java.util.LinkedList;
 import java.util.List;
 
+import pl.gameofthrones.gameboard.pieces.Piece;
+
 /**
  * 
  * pl: pole
@@ -11,10 +13,14 @@ import java.util.List;
  */
 public abstract class Field {
     
-    protected List<Field> neighborFields = new LinkedList<Field>();
+    protected List<Field> mNeighborFields = new LinkedList<Field>();
     
-    protected final int id;
-    protected final String name;
+    protected List<Piece> mPieces = new LinkedList<Piece>();
+    
+    protected final int mId;
+    
+    protected final String mName;
+    
     
     /**
      * 
@@ -22,13 +28,24 @@ public abstract class Field {
      * @param name
      */
     Field(int id, String name){
-        this.id = id;
-        this.name = name;
+        this.mId = id;
+        this.mName = name;
     }
 
     
     public void addNeighbor(Field field) {
-        neighborFields.add(field);
+        mNeighborFields.add(field);
     }
 
+    void addPiece(Piece piece){
+    	mPieces.add(piece);
+    }
+    
+    boolean removePiece(Piece piece){
+    	return mPieces.remove(piece);
+    }
+    
+    int getPiecesCount(){
+    	return mPieces.size();
+    }
 }

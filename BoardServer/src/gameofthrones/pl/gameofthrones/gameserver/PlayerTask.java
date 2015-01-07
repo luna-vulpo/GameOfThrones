@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import pl.gameofthrones.gameboard.Board;
+import pl.gameofthrones.gameboard.Board.Builder;
 import pl.gameofthrones.gameboard.Player;
 import pl.gameofthrones.gameserver.protocol.QueryServer;
 
@@ -66,5 +68,23 @@ public final class PlayerTask implements Runnable, Player {
     public void stop(){
         mRan = false;
     }
+
+	
+    public void setConnectionRefuse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setHouse(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sentBoardState(Board board) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
