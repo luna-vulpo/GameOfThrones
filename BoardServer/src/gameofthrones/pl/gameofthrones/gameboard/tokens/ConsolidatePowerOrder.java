@@ -6,6 +6,6 @@ package pl.gameofthrones.gameboard.tokens;
  * @author arek
  *
  */
-public final class ConsolidateOrder extends OrderToken {
+public final class ConsolidatePowerOrder extends OrderToken {
 
 }
