@@ -8,6 +8,7 @@ import pl.gameofthrones.gameboard.fields.Field;
 import pl.gameofthrones.gameboard.fields.OpenSea;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
+import pl.gameofthrones.gameserver.Player;
 
 /**
  * 
@@ -97,6 +98,11 @@ public final class Board {
 		fields[49] = new Terrain(49,"East Summer Sea");
 		
 		fields[0].addNeighbor(fields[1]);
+		fields[0].addNeighbor(fields[3]);
+		fields[0].addNeighbor(fields[4]);
+		fields[0].addNeighbor(fields[9]);
+		fields[0].addNeighbor(fields[10]);
+		fields[0].addNeighbor(fields[11]);
 	}
 
 	private void schuffleWildlingsCards() {
@@ -187,5 +193,10 @@ public final class Board {
 				p.sentBoardState(this);
 		}
 		
+	}
+
+	public Player getNextPlayerInTour() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
