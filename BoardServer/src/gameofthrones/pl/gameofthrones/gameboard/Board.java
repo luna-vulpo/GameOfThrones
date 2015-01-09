@@ -30,7 +30,7 @@ public final class Board {
 	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
 	private Player[] mPlayers;
 
-	final Field[] fields = new Field[50];
+	final Field[] fields = new Field[100];
 
 	WildlingsDeck wildlingsDeck = new WildlingsDeck();
 	WesterosDeck westerosDeckI = new WesterosDeck();
