@@ -3,6 +3,7 @@ package pl.gameofthrones.gameboard;
 import pl.gameofthrones.gameboard.fields.Castle;
 import pl.gameofthrones.gameboard.fields.Field;
 import pl.gameofthrones.gameboard.fields.OpenSea;
+import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
 import decks.WesterosDeck;
@@ -98,6 +99,14 @@ public final class Board {
 		fields[47] = new Terrain(47,"The Arbor");
 		fields[48] = new OpenSea(48,"West Summer Sea");
 		fields[49] = new OpenSea(49,"East Summer Sea");
+		fields[50] = new Port(50, "Winterfell Port");
+		fields[51] = new Port(51, "White Harbor Port");
+		fields[52] = new Port(52, "Pyke Port");
+		fields[53] = new Port(53, "Lannisport Port");
+		fields[54] = new Port(54, "Dragonstone Port");
+		fields[55] = new Port(55, "Storms End Port");
+		fields[56] = new Port(56, "Oldtown Port");
+		fields[57] = new Port(57, "Sunspear Port");
 		
 		fields[0].addNeighbor(fields[1]);
 	}

@@ -33,7 +33,7 @@ package pl.gameofthrones.gameboard.fields;
  */
 public final class Port extends Sea {
 
-	Port(int id, String name) {
+	public Port(int id, String name) {
 		super(id, name);
 	}
 
