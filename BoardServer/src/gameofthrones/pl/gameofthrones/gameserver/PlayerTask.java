@@ -15,14 +15,13 @@ public final class PlayerTask implements Runnable {
 
     private final Socket mGamerSocket;
     private BufferedReader mIn;
-	private PrintWriter mOut;
+    private PrintWriter mOut;
     private boolean mRan = true;
-	private Player player;
+	Player player = new Player();
 
     Gson gson = new Gson();
 
     public PlayerTask(Socket clientSocket) {
-		player = new Player();
         mGamerSocket = clientSocket;
 
     }
