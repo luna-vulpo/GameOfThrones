@@ -47,7 +47,7 @@ public class BoardServer implements Runnable {
 				Socket clientSocket = mServerSocket.accept();				
 				PlayerTask gamer = new PlayerTask(clientSocket);
 				
-				boardBuilder.attachePlayer(gamer);
+				boardBuilder.attachPlayer(gamer.getPlayer());
 				
 				new Thread(gamer).start();
 				

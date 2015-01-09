@@ -6,9 +6,9 @@ package pl.gameofthrones.gameboard;
  * 
  * @author arek
  * 
- *         For details about each card please refer to House_Cards_Reference_Sheet.pdf (in docs folder) -
- *         complete reference of House Cards prepared by DeanAU from
- *         BoardGameGeek
+ *         For details about each card please refer to
+ *         House_Cards_Reference_Sheet.pdf (in docs folder) - complete reference
+ *         of House Cards prepared by DeanAU from BoardGameGeek
  *
  */
 public final class HouseCard {
@@ -17,6 +17,7 @@ public final class HouseCard {
 	String specialAbilityDesc;
 	int numberOfSwordIconss;
 	int numberOfFortificationIcons;
+	boolean isDiscarded = false;
 	
 	public HouseCard(String name, String specialAbilityDesc,
 			int numberOfSwordIconss, int numberOfFortificationIcons) {
@@ -42,3 +43,4 @@ public final class HouseCard {
 	
 
 }
+

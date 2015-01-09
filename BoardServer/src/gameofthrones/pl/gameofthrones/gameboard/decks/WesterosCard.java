@@ -15,6 +15,11 @@ public final class WesterosCard {
 		this.textEffect = textEffect;
 		this.hasWildlingIcon = hasWildlingIcon;
 	}
+
+	public void preformAction() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

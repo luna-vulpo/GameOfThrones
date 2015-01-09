@@ -1,5 +1,8 @@
 package pl.gameofthrones.gameboard;
 
+import java.util.List;
+
+import pl.gameofthrones.gameboard.decks.WesterosCard;
 import pl.gameofthrones.gameboard.decks.WesterosDeck;
 import pl.gameofthrones.gameboard.decks.WildlingsDeck;
 import pl.gameofthrones.gameboard.fields.Castle;
@@ -8,6 +11,8 @@ import pl.gameofthrones.gameboard.fields.OpenSea;
 import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
+import pl.gameofthrones.gameboard.tokens.OrderToken;
+
 
 /**
  * 
@@ -24,9 +29,14 @@ public final class Board {
 	public final static int PLAYER_HOUSE_MARTELL= 3;
 	public final static int PLAYER_HOUSE_TYRELL = 4;
 	public final static int PLAYER_HOUSE_BARATHEON = 5;
+	
+	public final static int PHASE_RAID = 0;
+	public final static int PHASE_MARCH = 1;
+	public final static int PHASE_CONSOLIDATE_POWER = 2;
+	
 
 	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
-	private Player[] mPlayers;
+	private Player[] players;
 
 	final Field[] fields = new Field[58];
 
@@ -38,7 +48,7 @@ public final class Board {
 	int roundTrack = 1;
 
 	private Board(Player[] players) {
-		this.mPlayers = players;
+		this.players = players;
 		setupFields();
 		wildlingsDeck.shuffle();
 		westerosDeckI.shuffle();
@@ -133,7 +143,7 @@ public final class Board {
 		 * @return
 		 * @throws TooManyPlayersException
 		 */
-		public synchronized void attachePlayer(Player player)
+		public synchronized void attachPlayer(Player player)
 				throws TooManyPlayersException {
 
 			for (int i = 0; i < mPlayers.length; i++) {
@@ -162,7 +172,7 @@ public final class Board {
 				player.setHouse(houseId);
 				mAttachedPlayerCounter++;
 			} else
-				attachePlayer(player);
+				attachPlayer(player);
 
 		}
 
@@ -186,10 +196,61 @@ public final class Board {
 	}
 
 	public void sentStateToAllPlayers() {
-		for(Player p : mPlayers){
+		for(Player p : players){
 			if(p != null)
 				p.sentBoardState(this);
 		}
 		
+	}
+
+	public void moveTurnMarker() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public WesterosCard getWesterosCardFromDeckI() {
+		
+		return westerosDeckI.peek();
+	}
+
+
+	public WesterosCard getWesterosCardFromDeckII() {
+		
+		return westerosDeckII.peek();
+	}
+	
+	public WesterosCard getWesterosCardFromDeckIII() {
+		
+		return westerosDeckIII.peek();
+	}
+
+	public void moveWildlingesTokens() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Player getNextPlayerInPlaningPhase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setOrderTokens(List<OrderToken> tokens) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void dispatchInfoAboutTokens() {
+		
+		
+	}
+
+	public Player getNextPlayerInActionPhase(int phase) {
+		
+		return null;
+	}
+
+	public List<OrderToken> getOrderTokenListFor(int phaseRaid, Player player) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

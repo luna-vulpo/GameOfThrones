@@ -6,23 +6,23 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import pl.gameofthrones.gameboard.Board;
-import pl.gameofthrones.gameboard.Board.Builder;
 import pl.gameofthrones.gameboard.Player;
 import pl.gameofthrones.gameserver.protocol.QueryServer;
 
 import com.google.gson.Gson;
 
-public final class PlayerTask implements Runnable, Player {
+public final class PlayerTask implements Runnable {
 
     private final Socket mGamerSocket;
     private BufferedReader mIn;
-    private PrintWriter mOut;
+	private PrintWriter mOut;
     private boolean mRan = true;
+	private Player player;
 
     Gson gson = new Gson();
 
     public PlayerTask(Socket clientSocket) {
+		player = new Player();
         mGamerSocket = clientSocket;
 
     }
@@ -75,16 +75,8 @@ public final class PlayerTask implements Runnable, Player {
 		
 	}
 
-	@Override
-	public void setHouse(int i) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void sentBoardState(Board board) {
-		// TODO Auto-generated method stub
-		
+	public Player getPlayer() {
+		return player;
 	}
 
 }
