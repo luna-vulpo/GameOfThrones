@@ -4,7 +4,10 @@ import java.util.List;
 
 import pl.gameofthrones.gameboard.Board;
 import pl.gameofthrones.gameboard.Player;
-import pl.gameofthrones.gameboard.WesterosCard;
+import pl.gameofthrones.gameboard.decks.WesterosCard;
+import pl.gameofthrones.gameboard.tokens.ConsolidatePowerOrder;
+import pl.gameofthrones.gameboard.tokens.MarchOrder;
+import pl.gameofthrones.gameboard.tokens.RaidOrder;
 import pl.gameofthrones.gameboard.tokens.Token;
 import pl.gameofthrones.util.Log;
 
@@ -12,7 +15,7 @@ public final class GameManager implements Runnable {
 
 	private static final String TAG = GameManager.class.getSimpleName();
 
-	private Board mBoard = null;
+	private Board board = null;
 	
 	/**
 	 * not lazy thread safe singleton
@@ -33,8 +36,7 @@ public final class GameManager implements Runnable {
 	
 	
 	public void setBoard(Board board) {
-		mBoard = board;
-		
+		this.board = board;
 	}
 
 	@Override
@@ -42,11 +44,11 @@ public final class GameManager implements Runnable {
 
 		////check necessary conditions before start game
 		
-		if(mBoard == null){
+		if(board == null){
 			Log.e(TAG, "the board cannot be a null!");
 			return;
 		}
-		mBoard.sentStateToAllPlayers();
+		board.sentStateToAllPlayers();
 		
 		//// run the game!
 		while (mRan) {
@@ -55,13 +57,13 @@ public final class GameManager implements Runnable {
 			// // westeros phase
 			if (!mIsFirstTurn) {
 				mIsFirstTurn = false;
-				mBoard.moveTurnMarker();
+				board.moveTurnMarker();
 
-				WesterosCard w1 = mBoard.getWesterosCard1();
-				WesterosCard w2 = mBoard.getWesterosCard2();
-				WesterosCard w3 = mBoard.getWesterosCard3();
+				WesterosCard w1 = board.getWesterosCardFromDeckI();
+				WesterosCard w2 = board.getWesterosCardFromDeckII();
+				WesterosCard w3 = board.getWesterosCardFromDeckIII();
 
-				mBoard.moveWildlingesTokens();
+				board.moveWildlingesTokens();
 
 				w1.preformAction();
 				w2.preformAction();
@@ -72,12 +74,15 @@ public final class GameManager implements Runnable {
 			// // planing phase
 			Player player = null;
 			do {
-				player = mBoard.getNextPlayerInPlaningPhase();
+				player = board.getNextPlayerInPlaningPhase();
 				List<Token> tokens	= player.getTokenList();
-				mBoard.setTokens(tokens);
+				board.setTokens(tokens);
+				
+				board.dispatchInfoAboutTokens();
+			
 			} while (player != null);
 
-			mBoard.dispatchInfoAboutTokens();
+			
 			
 			//??? Messenger Raven ???
 			
@@ -87,27 +92,32 @@ public final class GameManager implements Runnable {
 			
 			// resolve ride orders
 			do {
-				player = mBoard.getNextPlayerInActionPhase("ride");
-				List<Token> tokens = mBoard.getRideTokenListFor(player);
-				RideToken rideToken = player.pickUpRideToken();
-				mBoard.setTokens(tokens);
+				player = board.getNextPlayerInActionPhase(Board.PHASE_RIDE);
+				List<Token> tokens = board.getTokenListFor(Board.PHASE_RIDE,player);
+				RaidOrder rideOrder = player.selectRideOrder();
+				
+				//???????????
+				//???????????
+				
+				board.setTokens(tokens);
+				
 			} while (player != null);
 			
 			
 			// resolve march orders
 			do {
-				player = mBoard.getNextPlayerInActionPhase("march");
-				List<Token> tokens = mBoard.getRideTokenListFor(player);
-				RideToken rideToken = player.pickUpRideToken();
-				mBoard.setTokens(tokens);
+				player = board.getNextPlayerInActionPhase(Board.PHASE_MARCH);
+				List<Token> tokens = board.getTokenListFor(Board.PHASE_MARCH,player);
+				MarchOrder marchOrder = player.selectMarchOrder();
+				board.setTokens(tokens);
 			} while (player != null);
 			
 			// Resolve Consolidate Power Orders
 			do {
-				player = mBoard.getNextPlayerInActionPhase("ConsolidatePower");
-				List<Token> tokens = mBoard.getRideTokenListFor(player);
-				RideToken rideToken = player.pickUpRideToken();
-				mBoard.setTokens(tokens);
+				player = board.getNextPlayerInActionPhase(Board.PHASE_CONSOLIDATE_POWER);
+				List<Token> tokens = board.getTokenListFor(Board.PHASE_CONSOLIDATE_POWER,player);
+				ConsolidatePowerOrder consolidatePowerOrder = player.selectConsolidatePowerOrder();
+				board.setTokens(tokens);
 			} while (player != null);
 					 
 			
