@@ -28,12 +28,12 @@ public final class Board {
 	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
 	private Player[] mPlayers;
 
-	final Field[] fields = new Field[100];
+	final Field[] fields = new Field[58];
 
 	WildlingsDeck wildlingsDeck = new WildlingsDeck();
-	WesterosDeck westerosDeckI = new WesterosDeck(WesterosDeck.WESTEROS_I);
-	WesterosDeck westerosDeckII = new WesterosDeck(WesterosDeck.WESTEROS_II);
-	WesterosDeck westerosDeckIII = new WesterosDeck(WesterosDeck.WESTEROS_III);
+	WesterosDeck westerosDeckI = new WesterosDeck(WesterosDeck.DECK_I);
+	WesterosDeck westerosDeckII = new WesterosDeck(WesterosDeck.DECK_II);
+	WesterosDeck westerosDeckIII = new WesterosDeck(WesterosDeck.DECK_III);
 
 	int roundTrack = 1;
 
