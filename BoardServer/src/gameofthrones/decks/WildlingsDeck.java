@@ -1,5 +1,5 @@
 package decks;
 
-public final class WildlingsDeck {
+public final class WildlingsDeck extends Deck<WildlingCard> {
 
 }

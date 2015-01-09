@@ -1,15 +1,12 @@
 package pl.gameofthrones.gameboard;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-import decks.WesterosDeck;
-import decks.WildlingsDeck;
 import pl.gameofthrones.gameboard.fields.Castle;
 import pl.gameofthrones.gameboard.fields.Field;
 import pl.gameofthrones.gameboard.fields.OpenSea;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
+import decks.WesterosDeck;
+import decks.WildlingsDeck;
 
 /**
  * 
@@ -33,17 +30,19 @@ public final class Board {
 	final Field[] fields = new Field[100];
 
 	WildlingsDeck wildlingsDeck = new WildlingsDeck();
-	WesterosDeck westerosDeckI = new WesterosDeck();
-	WesterosDeck westerosDeckII = new WesterosDeck();
-	WesterosDeck westerosDeckIII = new WesterosDeck();
+	WesterosDeck westerosDeckI = new WesterosDeck(WesterosDeck.WESTEROS_I);
+	WesterosDeck westerosDeckII = new WesterosDeck(WesterosDeck.WESTEROS_II);
+	WesterosDeck westerosDeckIII = new WesterosDeck(WesterosDeck.WESTEROS_III);
 
-	int tourIndicator = 1;
+	int roundTrack = 1;
 
 	private Board(Player[] players) {
 		this.mPlayers = players;
 		setupFields();
-		schuffleWildlingsCards();
-		schuffleWesterosCards();
+		wildlingsDeck.shuffle();
+		westerosDeckI.shuffle();
+		westerosDeckII.shuffle();
+		westerosDeckIII.shuffle();
 		spreadNeutralArmy(players.length);
 	}
 
@@ -101,14 +100,6 @@ public final class Board {
 		fields[49] = new OpenSea(49,"East Summer Sea");
 		
 		fields[0].addNeighbor(fields[1]);
-	}
-
-	private void schuffleWildlingsCards() {
-
-	}
-
-	private void schuffleWesterosCards() {
-
 	}
 
 	private void spreadNeutralArmy(int numberOfPlayers) {
