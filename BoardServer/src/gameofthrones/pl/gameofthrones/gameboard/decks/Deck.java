@@ -1,4 +1,4 @@
-package decks;
+package pl.gameofthrones.gameboard.decks;
 
 import java.util.Collections;
 import java.util.Iterator;

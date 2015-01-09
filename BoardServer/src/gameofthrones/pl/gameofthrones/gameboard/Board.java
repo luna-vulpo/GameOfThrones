@@ -1,13 +1,13 @@
 package pl.gameofthrones.gameboard;
 
+import pl.gameofthrones.gameboard.decks.WesterosDeck;
+import pl.gameofthrones.gameboard.decks.WildlingsDeck;
 import pl.gameofthrones.gameboard.fields.Castle;
 import pl.gameofthrones.gameboard.fields.Field;
 import pl.gameofthrones.gameboard.fields.OpenSea;
 import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
-import decks.WesterosDeck;
-import decks.WildlingsDeck;
 
 /**
  * 

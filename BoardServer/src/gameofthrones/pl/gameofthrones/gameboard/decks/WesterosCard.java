@@ -1,4 +1,4 @@
-package decks;
+package pl.gameofthrones.gameboard.decks;
 
 public final class WesterosCard {
 	
