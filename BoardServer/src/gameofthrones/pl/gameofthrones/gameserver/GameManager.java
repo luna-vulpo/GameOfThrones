@@ -94,6 +94,26 @@ public final class GameManager implements Runnable {
 			} while (player != null);
 			
 			
+			// resolve march orders
+			do {
+				player = mBoard.getNextPlayerInActionPhase("march");
+				List<Token> tokens = mBoard.getRideTokenListFor(player);
+				RideToken rideToken = player.pickUpRideToken();
+				mBoard.setTokens(tokens);
+			} while (player != null);
+			
+			// Resolve Consolidate Power Orders
+			do {
+				player = mBoard.getNextPlayerInActionPhase("ConsolidatePower");
+				List<Token> tokens = mBoard.getRideTokenListFor(player);
+				RideToken rideToken = player.pickUpRideToken();
+				mBoard.setTokens(tokens);
+			} while (player != null);
+					 
+			
+			
+			// clean up
+			
 		}
 	}
 
