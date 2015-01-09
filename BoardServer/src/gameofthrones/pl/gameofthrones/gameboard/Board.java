@@ -1,14 +1,13 @@
 package pl.gameofthrones.gameboard;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 import pl.gameofthrones.gameboard.fields.Castle;
 import pl.gameofthrones.gameboard.fields.Field;
 import pl.gameofthrones.gameboard.fields.OpenSea;
+import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
-import pl.gameofthrones.gameserver.Player;
+import decks.WesterosDeck;
+import decks.WildlingsDeck;
 
 /**
  * 
@@ -19,28 +18,32 @@ import pl.gameofthrones.gameserver.Player;
  */
 public final class Board {
 
-	public final static int PLAYER_name0 = 0;
-	public final static int PLAYER_name1 = 1;
-	public final static int PLAYER_name2 = 2;
-	public final static int PLAYER_name3 = 3;
-	public final static int PLAYER_name4 = 4;
-	public final static int PLAYER_name5 = 5;
+	public final static int PLAYER_HOUSE_STARK = 0;
+	public final static int PLAYER_HOUSE_GREYJOY = 1;
+	public final static int PLAYER_HOUSE_LANNISTER = 2;
+	public final static int PLAYER_HOUSE_MARTELL= 3;
+	public final static int PLAYER_HOUSE_TYRELL = 4;
+	public final static int PLAYER_HOUSE_BARATHEON = 5;
 
-	public final static int MAX_PLAYER = PLAYER_name5 + 1;
+	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
 	private Player[] mPlayers;
 
-	final Field[] fields = new Field[50];
+	final Field[] fields = new Field[58];
 
-	final Queue<WildlingsCard> mWildingsCardStack = new LinkedList<WildlingsCard>();
-	final Queue<WesterosCard> mWesterosCardStack = new LinkedList<WesterosCard>();
+	WildlingsDeck wildlingsDeck = new WildlingsDeck();
+	WesterosDeck westerosDeckI = new WesterosDeck(WesterosDeck.DECK_I);
+	WesterosDeck westerosDeckII = new WesterosDeck(WesterosDeck.DECK_II);
+	WesterosDeck westerosDeckIII = new WesterosDeck(WesterosDeck.DECK_III);
 
-	int tourIndicator = 1;
+	int roundTrack = 1;
 
 	private Board(Player[] players) {
 		this.mPlayers = players;
 		setupFields();
-		schuffleWildlingsCards();
-		schuffleWesterosCards();
+		wildlingsDeck.shuffle();
+		westerosDeckI.shuffle();
+		westerosDeckII.shuffle();
+		westerosDeckIII.shuffle();
 		spreadNeutralArmy(players.length);
 	}
 
@@ -48,69 +51,64 @@ public final class Board {
 		
 		fields[0] = new OpenSea(0, "Bay of Ice");
 		fields[1] = new Castle(1, "Castle Black");
-		fields[2] = new Castle(2, "Karnhold");
+		fields[2] = new Terrain(2, "Karhold");
 		fields[3] = new Stronghold(3, "Winterfell");		
-		fields[4] = new Terrain(4,"The Srony Shore");
-		fields[4] = new Terrain(4,"White Harbor");
+		fields[4] = new Terrain(4,"The Stony Shore");
+		fields[4] = new Castle(4,"White Harbor");
 		fields[6] = new OpenSea(6, "The Shivearing Sea");
 		fields[7] = new Terrain(7,"Window's Watch");
-		fields[8] = new Terrain(8,"The Narrow sea");
+		fields[8] = new OpenSea(8,"The Narrow sea");
 		fields[9] = new Terrain(9,"Greywater Watch");
 		fields[10] = new OpenSea(10,"Sunset Sea");
-		fields[11] = new Terrain(11,"Flint's Finger");
-		fields[12] = new Terrain(12,"Moat Calin");
+		fields[11] = new Castle(11,"Flint's Finger");
+		fields[12] = new Castle(12,"Moat Calin");
 		fields[13] = new Terrain(13,"The Fingers");
-		fields[14] = new Terrain(14,"Ironman's Bay");
-		fields[15] = new Terrain(15,"Seagard");
+		fields[14] = new OpenSea(14,"Ironman's Bay");
+		fields[15] = new Stronghold(15,"Seagard");
 		fields[16] = new Terrain(16,"The Twins");
-		fields[17] = new Terrain(17,"Pyke");
+		fields[17] = new Stronghold(17,"Pyke");
 		fields[18] = new Terrain(18,"The Mountains of the Moon");
-		fields[19] = new Terrain(19,"Riverrun");
-		fields[20] = new Terrain(20,"The Eyrie");
-		fields[21] = new Terrain(21,"Lannisport");
-		fields[22] = new Terrain(22,"Harrenal");
-		fields[23] = new Terrain(23,"Dragonstone");
+		fields[19] = new Stronghold(19,"Riverrun");
+		fields[20] = new Castle(20,"The Eyrie");
+		fields[21] = new Stronghold(21,"Lannisport");
+		fields[22] = new Castle(22,"Harrenhal");
+		fields[23] = new Stronghold(23,"Dragonstone");
 		fields[24] = new Terrain(24,"Stoney Sept");
-		fields[25] = new Terrain(25,"Crackcaw Point");
-		fields[26] = new Terrain(26,"The Golden Sound");
+		fields[25] = new Castle(25,"Crackclaw Point");
+		fields[26] = new OpenSea(26,"The Golden Sound");
 		fields[27] = new OpenSea(27,"Blackwater Bay");
 		fields[28] = new Terrain(28,"Searoad Marches");
 		fields[29] = new Terrain(29,"Blackwater");
-		fields[30] = new Terrain(30,"Kings's Landing");
+		fields[30] = new Stronghold(30,"Kings's Landing");
 		fields[31] = new Terrain(31,"Kingswood");
-		fields[32] = new Terrain(32,"Shipsreaker Bay");
-		fields[33] = new Terrain(33,"Higgarden");
-		fields[34] = new Terrain(34,"The Reach");
+		fields[32] = new OpenSea(32,"Shipsbreaker Bay");
+		fields[33] = new Stronghold(33,"Highgarden");
+		fields[34] = new Castle(34,"The Reach");
 		fields[35] = new Terrain(35,"Dornish Marches");
-		fields[36] = new Terrain(36,"Storms End");
+		fields[36] = new Castle(36,"Storms End");
 		fields[37] = new Terrain(37,"The Boneway");
-		fields[38] = new Terrain(38,"Oldtown");
+		fields[38] = new Stronghold(38,"Oldtown");
 		fields[39] = new Terrain(39,"Prince's Pass");
-		fields[40] = new Terrain(40,"Sea of Dorne");
+		fields[40] = new OpenSea(40,"Sea of Dorne");
 		fields[41] = new Terrain(41,"Three Towers");
-		fields[42] = new Terrain(42,"Yronwood");
-		fields[43] = new Terrain(43,"Sunspear");
-		fields[44] = new Terrain(44,"Redwyne Straights");
+		fields[42] = new Castle(42,"Yronwood");
+		fields[43] = new Stronghold(43,"Sunspear");
+		fields[44] = new OpenSea(44,"Redwyne Straights");
 		fields[45] = new Terrain(45,"Salt Shore");
-		fields[46] = new Terrain(46,"Starfall");
-		fields[47] = new Terrain(47,"The arbor");
+		fields[46] = new Castle(46,"Starfall");
+		fields[47] = new Terrain(47,"The Arbor");
 		fields[48] = new OpenSea(48,"West Summer Sea");
-		fields[49] = new Terrain(49,"East Summer Sea");
+		fields[49] = new OpenSea(49,"East Summer Sea");
+		fields[50] = new Port(50, "Winterfell Port");
+		fields[51] = new Port(51, "White Harbor Port");
+		fields[52] = new Port(52, "Pyke Port");
+		fields[53] = new Port(53, "Lannisport Port");
+		fields[54] = new Port(54, "Dragonstone Port");
+		fields[55] = new Port(55, "Storms End Port");
+		fields[56] = new Port(56, "Oldtown Port");
+		fields[57] = new Port(57, "Sunspear Port");
 		
 		fields[0].addNeighbor(fields[1]);
-		fields[0].addNeighbor(fields[3]);
-		fields[0].addNeighbor(fields[4]);
-		fields[0].addNeighbor(fields[9]);
-		fields[0].addNeighbor(fields[10]);
-		fields[0].addNeighbor(fields[11]);
-	}
-
-	private void schuffleWildlingsCards() {
-
-	}
-
-	private void schuffleWesterosCards() {
-
 	}
 
 	private void spreadNeutralArmy(int numberOfPlayers) {
@@ -193,10 +191,5 @@ public final class Board {
 				p.sentBoardState(this);
 		}
 		
-	}
-
-	public Player getNextPlayerInTour() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
