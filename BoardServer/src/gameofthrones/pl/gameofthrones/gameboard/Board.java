@@ -155,7 +155,8 @@ public final class Board {
 	 */
 	public static class Builder {
 
-		private static final String TAG = null;
+		private static final String TAG = Builder.class.getSimpleName();
+
 		private Player[] players = new Player[6];
 		private int attachedPlayerCounter = 0;
 
