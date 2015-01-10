@@ -13,13 +13,13 @@ import pl.gameofthrones.gameboard.pieces.Piece;
  */
 public abstract class Field {
     
-    protected List<Field> mNeighborFields = new LinkedList<Field>();
+    protected List<Field> neighborFields = new LinkedList<Field>();
     
-    protected List<Piece> mPieces = new LinkedList<Piece>();
+    protected List<Piece> pieces = new LinkedList<Piece>();
     
-    protected final int mId;
+    protected final int id;
     
-    protected final String mName;
+    protected final String name;
     
     
     /**
@@ -28,24 +28,24 @@ public abstract class Field {
      * @param name
      */
     Field(int id, String name){
-        this.mId = id;
-        this.mName = name;
+        this.id = id;
+        this.name = name;
     }
 
     
     public void addNeighbor(Field field) {
-        mNeighborFields.add(field);
+        neighborFields.add(field);
     }
 
     void addPiece(Piece piece){
-    	mPieces.add(piece);
+    	pieces.add(piece);
     }
     
     boolean removePiece(Piece piece){
-    	return mPieces.remove(piece);
+    	return pieces.remove(piece);
     }
     
     int getPiecesCount(){
-    	return mPieces.size();
+    	return pieces.size();
     }
 }
