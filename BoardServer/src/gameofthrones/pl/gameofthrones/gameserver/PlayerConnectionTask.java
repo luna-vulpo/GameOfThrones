@@ -11,17 +11,17 @@ import pl.gameofthrones.gameserver.protocol.QueryServer;
 
 import com.google.gson.Gson;
 
-public final class PlayerTask implements Runnable {
+public final class PlayerConnectionTask implements Runnable {
 
     private final Socket mGamerSocket;
     private BufferedReader mIn;
     private PrintWriter mOut;
     private boolean mRan = true;
-	Player player = new Player();
+	Player player = new Player(this);
 
-    Gson gson = new Gson();
+	Gson gson = new Gson();
 
-    public PlayerTask(Socket clientSocket) {
+    public PlayerConnectionTask(Socket clientSocket) {
         mGamerSocket = clientSocket;
 
     }

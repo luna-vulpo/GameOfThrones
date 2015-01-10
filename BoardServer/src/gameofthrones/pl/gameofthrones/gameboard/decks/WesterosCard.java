@@ -7,8 +7,7 @@ public final class WesterosCard {
 	private String textEffect;
 	private boolean hasWildlingIcon;
 	
-	public WesterosCard(String title, int deckNumber, String textEffect,
-			boolean hasWildlingIcon) {
+	public WesterosCard(String title, int deckNumber, String textEffect, boolean hasWildlingIcon) {
 		super();
 		this.title = title;
 		this.deckNumber = deckNumber;
