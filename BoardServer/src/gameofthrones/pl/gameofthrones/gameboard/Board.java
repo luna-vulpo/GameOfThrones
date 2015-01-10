@@ -154,8 +154,8 @@ public final class Board {
 	 */
 	public static class Builder {
 
-		private Player[] mPlayers = new Player[6];
-		private int mAttachedPlayerCounter = 0;
+		private Player[] players = new Player[6];
+		private int attachedPlayerCounter = 0;
 
 		/**
 		 * Attached new player to the game board
@@ -167,11 +167,11 @@ public final class Board {
 		public synchronized void attachPlayer(Player player)
 				throws TooManyPlayersException {
 
-			for (int i = 0; i < mPlayers.length; i++) {
-				if (mPlayers[i] != null) {
-					mPlayers[i] = player;
+			for (int i = 0; i < players.length; i++) {
+				if (players[i] != null) {
+					players[i] = player;
 					player.setHouse(i);
-					mAttachedPlayerCounter++;
+					attachedPlayerCounter++;
 				}
 			}
 			// it should never happen
@@ -188,10 +188,10 @@ public final class Board {
 		 */
 		public synchronized void attachePlayer(Player player, int houseId)
 				throws TooManyPlayersException {
-			if (mPlayers[houseId] == null) {
-				mPlayers[houseId] = player;
+			if (players[houseId] == null) {
+				players[houseId] = player;
 				player.setHouse(houseId);
-				mAttachedPlayerCounter++;
+				attachedPlayerCounter++;
 			} else
 				attachPlayer(player);
 
@@ -203,11 +203,11 @@ public final class Board {
 		 */
 		public boolean isFull() {
 
-			return mAttachedPlayerCounter >= MAX_PLAYER;
+			return attachedPlayerCounter >= MAX_PLAYER;
 		}
 
 		public Board build() {
-			return new Board(mPlayers);
+			return new Board(players);
 		}
 
 		public class TooManyPlayersException extends Exception {

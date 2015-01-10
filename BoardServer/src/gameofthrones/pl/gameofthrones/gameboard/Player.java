@@ -9,11 +9,11 @@ import pl.gameofthrones.gameboard.tokens.RaidOrder;
 
 public class Player {
 
-	int houseID = -1;
+	int houseId = -1;
 
 	public void setHouse(int id) {
 		if (id > 0 && id < Board.MAX_PLAYER - 1) {
-			this.houseID = id;
+			this.houseId = id;
 		}
 	}
 

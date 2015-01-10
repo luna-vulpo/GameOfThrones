@@ -56,6 +56,12 @@ public class Deck<C> implements Iterable<C> {
 		public C next() {
 			return pileOfCards.get(currentIndex);
 		}
+
+		@Override
+		public void remove() {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 
