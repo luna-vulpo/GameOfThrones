@@ -19,8 +19,6 @@ public final class PlayerConnectionTask implements Runnable {
     private boolean ran = true;
 	Player player = new Player(this);
 
-	Gson gson = new Gson();
-
     public PlayerConnectionTask(Socket clientSocket) {
         playerSocket = clientSocket;
 
@@ -34,7 +32,7 @@ public final class PlayerConnectionTask implements Runnable {
 
             String clientQuery = in.readLine();
             
-            QueryServer qs = gson.fromJson(clientQuery, QueryServer.class);
+            QueryServer qs = Main.GSON.fromJson(clientQuery, QueryServer.class);
             
             
             while(ran){
