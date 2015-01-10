@@ -2,6 +2,10 @@ package pl.gameofthrones.gameboard;
 
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
+
 import pl.gameofthrones.gameboard.decks.WesterosCard;
 import pl.gameofthrones.gameboard.decks.WesterosDeck;
 import pl.gameofthrones.gameboard.decks.WildlingsDeck;
@@ -36,8 +40,11 @@ public final class Board {
 	
 
 	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
+	
+	@Expose
 	private Player[] players;
 
+	@Expose
 	final Field[] fields = new Field[58];
 
 	WildlingsDeck wildlingsDeck = new WildlingsDeck();
@@ -118,7 +125,21 @@ public final class Board {
 		fields[56] = new Port(56, "Oldtown Port");
 		fields[57] = new Port(57, "Sunspear Port");
 		
-		fields[0].addNeighbor(fields[1]);
+		fields[0].addNeighbor(fields[1]);		
+		fields[0].addNeighbor(fields[3]);
+		fields[0].addNeighbor(fields[4]);
+		fields[0].addNeighbor(fields[9]);
+		fields[0].addNeighbor(fields[10]);
+		fields[0].addNeighbor(fields[11]);
+		fields[0].addNeighbor(fields[50]);
+		
+		fields[1].addNeighbor(fields[0]);
+		fields[1].addNeighbor(fields[3]);
+		fields[1].addNeighbor(fields[6]);
+		
+		fields[2].addNeighbor(fields[1]);
+		fields[2].addNeighbor(fields[3]);
+		fields[2].addNeighbor(fields[6]);
 	}
 
 	private void spreadNeutralArmy(int numberOfPlayers) {
@@ -253,4 +274,6 @@ public final class Board {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 }
