@@ -8,12 +8,14 @@ import java.net.Socket;
 
 import pl.gameofthrones.gameboard.Player;
 import pl.gameofthrones.gameserver.protocol.QueryServer;
+import pl.gameofthrones.util.Log;
 
 import com.google.gson.Gson;
 
 public final class PlayerConnectionTask implements Runnable {
 
-    private final Socket playerSocket;
+    private static final String TAG = PlayerConnectionTask.class.getSimpleName();
+	private final Socket playerSocket;
     private BufferedReader in;
     private PrintWriter out;
     private boolean ran = true;
@@ -29,7 +31,9 @@ public final class PlayerConnectionTask implements Runnable {
         try {
             in = new BufferedReader(new InputStreamReader(playerSocket.getInputStream()));
             out = new PrintWriter(playerSocket.getOutputStream(),true);
-
+            
+            Log.d(TAG, "connection to client established");
+            
             String clientQuery = in.readLine();
             
             QueryServer qs = Main.GSON.fromJson(clientQuery, QueryServer.class);

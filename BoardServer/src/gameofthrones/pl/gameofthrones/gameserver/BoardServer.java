@@ -58,10 +58,13 @@ public class BoardServer implements Runnable {
 				}
 				
 			}
+			Log.d(TAG, "while loop finished. Server stoped");
+
 		} catch (IOException e) {
-			e.printStackTrace();
+			Log.e(TAG, "server",e);
+			
 		} catch (TooManyPlayersException e) {
-			Log.e(TAG, "too many players");
+			Log.e(TAG, "too many players",e);
 			// TODO sent info to client that he is not accepted
 			// and end connection according to the protocol
 //			if (gamer != null)
@@ -72,7 +75,7 @@ public class BoardServer implements Runnable {
 				try {
 					mServerSocket.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					Log.e(TAG, "server",e);
 				}
 		}
 	}

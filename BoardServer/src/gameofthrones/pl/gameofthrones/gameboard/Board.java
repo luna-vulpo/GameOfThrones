@@ -16,6 +16,7 @@ import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
 import pl.gameofthrones.gameboard.tokens.OrderToken;
+import pl.gameofthrones.util.Log;
 
 
 /**
@@ -154,6 +155,7 @@ public final class Board {
 	 */
 	public static class Builder {
 
+		private static final String TAG = null;
 		private Player[] players = new Player[6];
 		private int attachedPlayerCounter = 0;
 
@@ -164,14 +166,20 @@ public final class Board {
 		 * @return
 		 * @throws TooManyPlayersException
 		 */
-		public synchronized void attachPlayer(Player player)
-				throws TooManyPlayersException {
+		public synchronized void attachPlayer(Player player) throws TooManyPlayersException {
 
 			for (int i = 0; i < players.length; i++) {
-				if (players[i] != null) {
+
+				// if exist empty room for player then put the player there
+				if (players[i] == null) {
+
 					players[i] = player;
 					player.setHouse(i);
 					attachedPlayerCounter++;
+
+					Log.d(TAG, "Player attached to the board as " + attachedPlayerCounter + " player; player house: " + i);
+
+					return;
 				}
 			}
 			// it should never happen
@@ -192,6 +200,8 @@ public final class Board {
 				players[houseId] = player;
 				player.setHouse(houseId);
 				attachedPlayerCounter++;
+
+				Log.d(TAG, "Player attached to the board as " + attachedPlayerCounter + "player; player house: " +houseId);
 			} else
 				attachPlayer(player);
 

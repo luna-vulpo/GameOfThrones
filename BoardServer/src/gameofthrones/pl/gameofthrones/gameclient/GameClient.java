@@ -28,7 +28,8 @@ public class GameClient implements Runnable {
 			serverSocket = new Socket("localhost", BoardServer.PORT);
 			in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
 			out = new PrintWriter(serverSocket.getOutputStream(), true);
-
+			
+			Log.d(TAG, "conection to server established");
 			while (ran) {
 				
 				//the important part here
