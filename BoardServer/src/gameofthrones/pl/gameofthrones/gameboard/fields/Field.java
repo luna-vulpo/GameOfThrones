@@ -28,13 +28,15 @@ public abstract class Field {
     @Expose
     protected final String name;
     
+    @Expose
+    protected int moveCost = 1;
     
     /**
      * 
      * @param id
      * @param name
      */
-    Field(int id, String name){
+     Field(int id, String name){
         this.id = id;
         this.name = name;
     }
