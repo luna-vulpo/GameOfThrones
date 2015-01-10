@@ -5,6 +5,7 @@ import java.io.PrintStream;
 public final class Log {
 
 	private static PrintStream logOutput = System.out;
+	private static final String DELIMETER = " | ";
 	
 	synchronized
 	public static void setLogOutput(PrintStream ps){
@@ -13,17 +14,21 @@ public final class Log {
 	
 	synchronized
 	private static void log(String level, String tag, String message, Exception e){
+		final String newTag = String.format("%-20s",tag.length() > 20 ? tag.substring(0, 20) : tag);
 		
-		logOutput.append(level).append('\t').append(tag).append('\t').append(message).append("\n").flush();
+		logOutput.append(level).append(DELIMETER)
+		.append(newTag).append(DELIMETER)
+		.append(message).append("\n")
+		.flush();
 		
 		if(e != null){
-			logOutput.append(level).append('\t').append(tag).append('\t').append("\n");
+			logOutput.append(level).append(DELIMETER).append(newTag).append(DELIMETER).append("\n");
 			e.printStackTrace(logOutput);
 		}
 		
 	}
 	
-	public static void V(String tag, String message){
+	public static void v(String tag, String message){
 		log("V",tag,message, null);
 	}
 	
