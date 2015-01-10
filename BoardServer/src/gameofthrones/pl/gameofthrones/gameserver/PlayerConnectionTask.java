@@ -13,31 +13,31 @@ import com.google.gson.Gson;
 
 public final class PlayerConnectionTask implements Runnable {
 
-    private final Socket mGamerSocket;
-    private BufferedReader mIn;
-    private PrintWriter mOut;
-    private boolean mRan = true;
+    private final Socket playerSocket;
+    private BufferedReader in;
+    private PrintWriter out;
+    private boolean ran = true;
 	Player player = new Player(this);
 
 	Gson gson = new Gson();
 
     public PlayerConnectionTask(Socket clientSocket) {
-        mGamerSocket = clientSocket;
+        playerSocket = clientSocket;
 
     }
 
     @Override
     public void run() {
         try {
-            mIn = new BufferedReader(new InputStreamReader(mGamerSocket.getInputStream()));
-            mOut = new PrintWriter(mGamerSocket.getOutputStream(),true);
+            in = new BufferedReader(new InputStreamReader(playerSocket.getInputStream()));
+            out = new PrintWriter(playerSocket.getOutputStream(),true);
 
-            String clientQuery = mIn.readLine();
+            String clientQuery = in.readLine();
             
             QueryServer qs = gson.fromJson(clientQuery, QueryServer.class);
             
             
-            while(mRan){
+            while(ran){
                 // do thread work
                 
             }
@@ -52,9 +52,9 @@ public final class PlayerConnectionTask implements Runnable {
             // finish the task
 
             try {
-                mOut.close();
-                mIn.close();
-                mGamerSocket.close();
+                out.close();
+                in.close();
+                playerSocket.close();
 
             }
             catch (IOException e) {
@@ -65,7 +65,7 @@ public final class PlayerConnectionTask implements Runnable {
     }
     
     public void stop(){
-        mRan = false;
+        ran = false;
     }
 
 	
