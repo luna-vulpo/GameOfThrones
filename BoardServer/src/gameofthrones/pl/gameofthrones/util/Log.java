@@ -14,10 +14,10 @@ public final class Log {
 	synchronized
 	private static void log(String level, String tag, String message, Exception e){
 		
-		logOutput.append(level).append('\t').append(tag).append('\t').append(message).flush();
+		logOutput.append(level).append('\t').append(tag).append('\t').append(message).append("\n").flush();
 		
 		if(e != null){
-			logOutput.append(level).append('\t').append(tag).append('\t');
+			logOutput.append(level).append('\t').append(tag).append('\t').append("\n");
 			e.printStackTrace(logOutput);
 		}
 		
