@@ -1,5 +1,8 @@
 package pl.gameofthrones.gameboard;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -17,6 +20,7 @@ import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
 import pl.gameofthrones.gameboard.tokens.OrderToken;
 import pl.gameofthrones.gameboard.tokens.RaidOrder;
+import pl.gameofthrones.gameserver.ServerMain;
 import pl.gameofthrones.util.Log;
 
 
@@ -29,19 +33,22 @@ import pl.gameofthrones.util.Log;
  */
 public final class Board {
 
+	final static String TAG = Board.class.getSimpleName();
+
 	public final static int PLAYER_HOUSE_STARK = 0;
 	public final static int PLAYER_HOUSE_GREYJOY = 1;
 	public final static int PLAYER_HOUSE_LANNISTER = 2;
 	public final static int PLAYER_HOUSE_MARTELL= 3;
 	public final static int PLAYER_HOUSE_TYRELL = 4;
 	public final static int PLAYER_HOUSE_BARATHEON = 5;
+	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
 	
 	public final static int PHASE_RAID = 0;
 	public final static int PHASE_MARCH = 1;
 	public final static int PHASE_CONSOLIDATE_POWER = 2;
 	
 
-	public final static int MAX_PLAYER = PLAYER_HOUSE_BARATHEON + 1;
+
 	
 	@Expose
 	private Player[] players;
@@ -64,16 +71,28 @@ public final class Board {
 		westerosDeckII.shuffle();
 		westerosDeckIII.shuffle();
 		spreadNeutralArmy(players.length);
+		
+		System.out.println(ServerMain.GSON.toJson(fields));
 	}
 
 	private void setupFields() {
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader("assets/board_config_fields.json"));
+			//TODO fix by add InstanceCreator. 
+			Field[] fields = ServerMain.GSON.fromJson(br, Field[].class);
+		} catch (FileNotFoundException e) {
+			Log.e(TAG, "setupFields()",e);
+		}  
+			     
 		
+/*		
 		fields[0] = new OpenSea(0, "Bay of Ice");
 		fields[1] = new Castle(1, "Castle Black");
 		fields[2] = new Terrain(2, "Karhold");
 		fields[3] = new Stronghold(3, "Winterfell");		
 		fields[4] = new Terrain(4,"The Stony Shore");
-		fields[4] = new Castle(4,"White Harbor");
+		fields[5] = new Castle(5,"White Harbor");
 		fields[6] = new OpenSea(6, "The Shivearing Sea");
 		fields[7] = new Terrain(7,"Window's Watch");
 		fields[8] = new OpenSea(8,"The Narrow sea");
@@ -142,6 +161,16 @@ public final class Board {
 		fields[2].addNeighbor(fields[1]);
 		fields[2].addNeighbor(fields[3]);
 		fields[2].addNeighbor(fields[6]);
+		
+		fields[3].addNeighbor(fields[0]);
+		fields[3].addNeighbor(fields[50]);
+		fields[3].addNeighbor(fields[1]);
+		fields[3].addNeighbor(fields[2]);
+		fields[3].addNeighbor(fields[6]);
+		fields[3].addNeighbor(fields[5]);
+		fields[3].addNeighbor(fields[12]);
+		fields[3].addNeighbor(fields[9]);
+		*/
 	}
 
 	private void spreadNeutralArmy(int numberOfPlayers) {

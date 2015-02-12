@@ -36,7 +36,7 @@ public final class PlayerConnectionTask implements Runnable {
             
             String clientQuery = in.readLine();
             
-            QueryServer qs = Main.GSON.fromJson(clientQuery, QueryServer.class);
+            QueryServer qs = ServerMain.GSON.fromJson(clientQuery, QueryServer.class);
             
             
             while(ran){

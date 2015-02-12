@@ -100,7 +100,7 @@ public final class GameManager implements Runnable {
 				//???????????
 				//???????????
 				
-				board.setOrderTokens(orderTokens);
+				//board.setOrderTokens(orderTokens);
 				
 			} while (player != null);
 			
@@ -111,7 +111,7 @@ public final class GameManager implements Runnable {
 				List<OrderToken> orderTokens = board.getOrderTokenListFor(
 						Board.PHASE_MARCH, player);
 				MarchOrder marchOrder = player.getSelectedMarchOrder();
-				board.setOrderTokens(orderTokens);
+				//board.setOrderTokens(orderTokens);
 			} while (player != null);
 			
 			// Resolve Consolidate Power Orders
@@ -119,7 +119,7 @@ public final class GameManager implements Runnable {
 				player = board.getNextPlayerInActionPhase(Board.PHASE_CONSOLIDATE_POWER);
 				List<OrderToken> orderTokens = board.getOrderTokenListFor(Board.PHASE_CONSOLIDATE_POWER, player);
 				ConsolidatePowerOrder consolidatePowerOrder = player.getSelectedConsolidatePowerOrder();
-				board.setOrderTokens(orderTokens);
+				//board.setOrderTokens(orderTokens);
 			} while (player != null);
 					 
 			

@@ -3,11 +3,11 @@ package pl.gameofthrones.gameserver;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class Main {
+public class ServerMain {
 
 	public static final Gson GSON = new GsonBuilder()
 											.excludeFieldsWithoutExposeAnnotation()
-											.setPrettyPrinting()
+											//.setPrettyPrinting()
 											.create();
 
 	public static void main(String[] args) {
