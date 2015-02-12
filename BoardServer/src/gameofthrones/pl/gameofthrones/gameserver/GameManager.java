@@ -75,9 +75,10 @@ public final class GameManager implements Runnable {
 			Player player = null;
 			do {
 				player = board.getNextPlayerInPlaningPhase();
-				List<OrderToken> orderTokens = player.getOrderTokenList();
+
+				List<RaidOrder> orderTokens = player.getOrderTokenList();
 				board.setOrderTokens(orderTokens);
-				
+
 				board.dispatchInfoAboutTokens();
 			
 			} while (player != null);
@@ -93,9 +94,8 @@ public final class GameManager implements Runnable {
 			// resolve ride orders
 			do {
 				player = board.getNextPlayerInActionPhase(Board.PHASE_RAID);
-				List<OrderToken> orderTokens = board.getOrderTokenListFor(
-						Board.PHASE_RAID, player);
-				RaidOrder raidOrder = player.selectRaidOrder();
+				List<OrderToken> orderTokens = board.getOrderTokenListFor(Board.PHASE_RAID, player);
+				RaidOrder raidOrder = player.getSelectedRaidOrder();
 				
 				//???????????
 				//???????????
@@ -110,16 +110,15 @@ public final class GameManager implements Runnable {
 				player = board.getNextPlayerInActionPhase(Board.PHASE_MARCH);
 				List<OrderToken> orderTokens = board.getOrderTokenListFor(
 						Board.PHASE_MARCH, player);
-				MarchOrder marchOrder = player.selectMarchOrder();
+				MarchOrder marchOrder = player.getSelectedMarchOrder();
 				board.setOrderTokens(orderTokens);
 			} while (player != null);
 			
 			// Resolve Consolidate Power Orders
 			do {
 				player = board.getNextPlayerInActionPhase(Board.PHASE_CONSOLIDATE_POWER);
-				List<OrderToken> orderTokens = board.getOrderTokenListFor(
-						Board.PHASE_CONSOLIDATE_POWER, player);
-				ConsolidatePowerOrder consolidatePowerOrder = player.selectConsolidatePowerOrder();
+				List<OrderToken> orderTokens = board.getOrderTokenListFor(Board.PHASE_CONSOLIDATE_POWER, player);
+				ConsolidatePowerOrder consolidatePowerOrder = player.getSelectedConsolidatePowerOrder();
 				board.setOrderTokens(orderTokens);
 			} while (player != null);
 					 

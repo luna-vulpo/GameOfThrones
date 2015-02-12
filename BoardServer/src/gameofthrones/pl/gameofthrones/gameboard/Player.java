@@ -28,19 +28,19 @@ public class Player {
 	public void sentBoardState(Board board) {
 	}
 
-	public List<OrderToken> getOrderTokenList() {
+	public List<RaidOrder> getOrderTokenList() {
 		return null;
 	}
 
-	public RaidOrder selectRaidOrder() {
+	public RaidOrder getSelectedRaidOrder() {
 		return null;
 	}
 
-	public MarchOrder selectMarchOrder() {
+	public MarchOrder getSelectedMarchOrder() {
 		return null;
 	}
 
-	public ConsolidatePowerOrder selectConsolidatePowerOrder() {
+	public ConsolidatePowerOrder getSelectedConsolidatePowerOrder() {
 		return null;
 	}
 }

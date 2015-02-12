@@ -32,7 +32,7 @@ public class BoardServer implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("init");
+		Log.v(TAG, "init");
 		mServerSocket = null;
 		
 		GameManager gameManager = GameManager.getGameManager();

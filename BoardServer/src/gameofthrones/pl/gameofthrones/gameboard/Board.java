@@ -16,6 +16,7 @@ import pl.gameofthrones.gameboard.fields.Port;
 import pl.gameofthrones.gameboard.fields.Stronghold;
 import pl.gameofthrones.gameboard.fields.Terrain;
 import pl.gameofthrones.gameboard.tokens.OrderToken;
+import pl.gameofthrones.gameboard.tokens.RaidOrder;
 import pl.gameofthrones.util.Log;
 
 
@@ -266,7 +267,7 @@ public final class Board {
 		return null;
 	}
 
-	public void setOrderTokens(List<OrderToken> orderTokens) {
+	public void setOrderTokens(List<RaidOrder> orderTokens) {
 		// TODO Auto-generated method stub
 		
 	}
