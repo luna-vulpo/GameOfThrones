@@ -8,8 +8,10 @@ package pl.gameofthrones.gameboard.fields;
  */
 public final class Stronghold extends Land {
 
+	private final static String TAG = Stronghold.class.getSimpleName();
+	
     public Stronghold(int id, String name) {
-        super(id, name);
+        super(TAG, id, name);
 
     }
 

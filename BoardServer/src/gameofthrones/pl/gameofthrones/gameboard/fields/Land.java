@@ -8,8 +8,8 @@ package pl.gameofthrones.gameboard.fields;
  */
 public abstract class Land extends Field {
 
-    Land(int id, String name) {
-        super(id, name);
+    Land(String fieldType,int id, String name) {
+        super(fieldType, id, name);
         
     }
 

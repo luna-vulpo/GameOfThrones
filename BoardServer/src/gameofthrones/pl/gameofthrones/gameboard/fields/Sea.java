@@ -7,8 +7,8 @@ package pl.gameofthrones.gameboard.fields;
  */
 public abstract class Sea extends Field {
 
-    public Sea(int id, String name) {
-        super(id, name);
+    public Sea(String fieldType, int id, String name) {
+        super(fieldType, id, name);
    }
 
 }

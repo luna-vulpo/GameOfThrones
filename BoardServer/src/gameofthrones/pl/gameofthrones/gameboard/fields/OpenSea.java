@@ -8,10 +8,11 @@ package pl.gameofthrones.gameboard.fields;
  */
 
 public final class OpenSea extends Sea {
-
+	
+	private final static String TAG = OpenSea.class.getSimpleName();
+	
     public OpenSea(int id, String name) {
-        super(id, name);
-     
+        super(TAG,id, name);
     }
 
 }

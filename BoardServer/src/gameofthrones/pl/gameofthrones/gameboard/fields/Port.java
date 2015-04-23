@@ -32,9 +32,11 @@ package pl.gameofthrones.gameboard.fields;
  *
  */
 public final class Port extends Sea {
-
+	
+	private final static String TAG = Port.class.getSimpleName();
+	
 	public Port(int id, String name) {
-		super(id, name);
+		super(TAG, id, name);
 	}
 
 }

@@ -7,8 +7,10 @@ package pl.gameofthrones.gameboard.fields;
  */
 public final class Terrain extends Land {
 
+	private final static String TAG = Terrain.class.getSimpleName();
+	
     public Terrain(int id, String name) {
-        super(id, name);
+        super(TAG, id, name);
 
     }
 

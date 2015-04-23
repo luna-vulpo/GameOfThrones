@@ -32,13 +32,16 @@ public abstract class Field {
 	@Expose
 	protected int moveCost = 1;
 
+	@Expose
+	protected String fieldType;
 	/**
 	 * 
 	 * @param id
 	 * @param name
 	 */
-	Field(int id, String name) {
+	Field(String fieldType, int id, String name) {
 		this.id = id;
+		this.fieldType = fieldType;
 		this.name = name;
 	}
 

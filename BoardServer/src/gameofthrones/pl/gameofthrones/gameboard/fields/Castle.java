@@ -10,9 +10,11 @@ package pl.gameofthrones.gameboard.fields;
  */
 
 public final class Castle extends Land {
-
-    public Castle(int id, String name) {
-        super(id, name);
+	
+	private final static String TAG = Castle.class.getSimpleName();
+    
+	public Castle(int id, String name) {
+        super(TAG,id, name);
 
     }
 
