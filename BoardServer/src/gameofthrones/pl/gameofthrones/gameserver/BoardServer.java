@@ -38,13 +38,12 @@ public class BoardServer implements Runnable {
 		GameManager gameManager = GameManager.getGameManager();
 		
 		Board.Builder boardBuilder = new Board.Builder();
-		
+		boardBuilder.build();
 		try {
 			mServerSocket = new ServerSocket(PORT);
 
 			while (mRan) {
-
-				Socket clientSocket = mServerSocket.accept();				
+				Socket clientSocket = mServerSocket.accept();
 				PlayerConnectionTask gamer = new PlayerConnectionTask(clientSocket);
 				
 				boardBuilder.attachPlayer(gamer.getPlayer());

@@ -47,9 +47,6 @@ public final class Board {
 	public final static int PHASE_MARCH = 1;
 	public final static int PHASE_CONSOLIDATE_POWER = 2;
 	
-
-
-	
 	@Expose
 	private Player[] players;
 
@@ -71,22 +68,26 @@ public final class Board {
 		westerosDeckII.shuffle();
 		westerosDeckIII.shuffle();
 		spreadNeutralArmy(players.length);
-		
-		System.out.println(ServerMain.GSON.toJson(fields));
 	}
 
 	private void setupFields() {
+		
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader("assets/board_config_fields.json"));
-			//TODO fix by add InstanceCreator. 
-			Field[] fields = ServerMain.GSON.fromJson(br, Field[].class);
+
+			Field[] fs = ServerMain.GSON.fromJson(br, Field[].class);
+
+			//fill array by desrialized objects
+			for(Field f : fs){
+				fields[f.id] = f;
+		}
 		} catch (FileNotFoundException e) {
 			Log.e(TAG, "setupFields()",e);
-		}  
-			     
+		}
 		
-/*		
+/*
+		
 		fields[0] = new OpenSea(0, "Bay of Ice");
 		fields[1] = new Castle(1, "Castle Black");
 		fields[2] = new Terrain(2, "Karhold");
@@ -170,6 +171,8 @@ public final class Board {
 		fields[3].addNeighbor(fields[5]);
 		fields[3].addNeighbor(fields[12]);
 		fields[3].addNeighbor(fields[9]);
+		
+		System.out.println(ServerMain.GSON.toJson(fields));
 		*/
 	}
 

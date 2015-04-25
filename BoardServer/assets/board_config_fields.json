@@ -1,375 +1,433 @@
 [
-    {
-      "neighborFieldIds": [
-        1,
-        3,
-        4,
-        9,
-        10,
-        11,
-        50
-      ],
-      "id": 0,
-      "name": "Bay of Ice",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [
-        0,
-        3,
-        6
-      ],
-      "id": 1,
-      "name": "Castle Black",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [
-        1,
-        3,
-        6
-      ],
-      "id": 2,
-      "name": "Karhold",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [
-        0,
-        50,
-        1,
-        2,
-        6,
-        5,
-        12,
-        9
-      ],
-      "id": 3,
-      "name": "Winterfell",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 4,
-      "name": "The Stony Shore",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 5,
-      "name": "White Harbor",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 6,
-      "name": "The Shivearing Sea",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 7,
-      "name": "Window\u0027s Watch",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 8,
-      "name": "The Narrow sea",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 9,
-      "name": "Greywater Watch",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 10,
-      "name": "Sunset Sea",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 11,
-      "name": "Flint\u0027s Finger",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 12,
-      "name": "Moat Calin",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 13,
-      "name": "The Fingers",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 14,
-      "name": "Ironman\u0027s Bay",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 15,
-      "name": "Seagard",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 16,
-      "name": "The Twins",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 17,
-      "name": "Pyke",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 18,
-      "name": "The Mountains of the Moon",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 19,
-      "name": "Riverrun",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 20,
-      "name": "The Eyrie",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 21,
-      "name": "Lannisport",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 22,
-      "name": "Harrenhal",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 23,
-      "name": "Dragonstone",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 24,
-      "name": "Stoney Sept",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 25,
-      "name": "Crackclaw Point",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 26,
-      "name": "The Golden Sound",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 27,
-      "name": "Blackwater Bay",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 28,
-      "name": "Searoad Marches",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 29,
-      "name": "Blackwater",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 30,
-      "name": "Kings\u0027s Landing",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 31,
-      "name": "Kingswood",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 32,
-      "name": "Shipsbreaker Bay",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 33,
-      "name": "Highgarden",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 34,
-      "name": "The Reach",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 35,
-      "name": "Dornish Marches",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 36,
-      "name": "Storms End",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 37,
-      "name": "The Boneway",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 38,
-      "name": "Oldtown",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 39,
-      "name": "Prince\u0027s Pass",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 40,
-      "name": "Sea of Dorne",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 41,
-      "name": "Three Towers",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 42,
-      "name": "Yronwood",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 43,
-      "name": "Sunspear",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 44,
-      "name": "Redwyne Straights",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 45,
-      "name": "Salt Shore",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 46,
-      "name": "Starfall",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 47,
-      "name": "The Arbor",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 48,
-      "name": "West Summer Sea",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 49,
-      "name": "East Summer Sea",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 50,
-      "name": "Winterfell Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 51,
-      "name": "White Harbor Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 52,
-      "name": "Pyke Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 53,
-      "name": "Lannisport Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 54,
-      "name": "Dragonstone Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 55,
-      "name": "Storms End Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 56,
-      "name": "Oldtown Port",
-      "moveCost": 1
-    },
-    {
-      "neighborFieldIds": [],
-      "id": 57,
-      "name": "Sunspear Port",
-      "moveCost": 1
-    }
-  ]
+  {
+    "neighborFieldIds": [
+      1,
+      3,
+      4,
+      9,
+      10,
+      11,
+      50
+    ],
+    "id": 0,
+    "name": "Bay of Ice",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [
+      0,
+      3,
+      6
+    ],
+    "id": 1,
+    "name": "Castle Black",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [
+      1,
+      3,
+      6
+    ],
+    "id": 2,
+    "name": "Karhold",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [
+      0,
+      50,
+      1,
+      2,
+      6,
+      5,
+      12,
+      9
+    ],
+    "id": 3,
+    "name": "Winterfell",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 4,
+    "name": "The Stony Shore",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 5,
+    "name": "White Harbor",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 6,
+    "name": "The Shivearing Sea",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 7,
+    "name": "Window\u0027s Watch",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 8,
+    "name": "The Narrow sea",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 9,
+    "name": "Greywater Watch",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 10,
+    "name": "Sunset Sea",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 11,
+    "name": "Flint\u0027s Finger",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 12,
+    "name": "Moat Calin",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 13,
+    "name": "The Fingers",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 14,
+    "name": "Ironman\u0027s Bay",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 15,
+    "name": "Seagard",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 16,
+    "name": "The Twins",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 17,
+    "name": "Pyke",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 18,
+    "name": "The Mountains of the Moon",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 19,
+    "name": "Riverrun",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 20,
+    "name": "The Eyrie",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 21,
+    "name": "Lannisport",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 22,
+    "name": "Harrenhal",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 23,
+    "name": "Dragonstone",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 24,
+    "name": "Stoney Sept",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 25,
+    "name": "Crackclaw Point",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 26,
+    "name": "The Golden Sound",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 27,
+    "name": "Blackwater Bay",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 28,
+    "name": "Searoad Marches",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 29,
+    "name": "Blackwater",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 30,
+    "name": "Kings\u0027s Landing",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 31,
+    "name": "Kingswood",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 32,
+    "name": "Shipsbreaker Bay",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 33,
+    "name": "Highgarden",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 34,
+    "name": "The Reach",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 35,
+    "name": "Dornish Marches",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 36,
+    "name": "Storms End",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 37,
+    "name": "The Boneway",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 38,
+    "name": "Oldtown",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 39,
+    "name": "Prince\u0027s Pass",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 40,
+    "name": "Sea of Dorne",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 41,
+    "name": "Three Towers",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 42,
+    "name": "Yronwood",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 43,
+    "name": "Sunspear",
+    "moveCost": 1,
+    "fieldType": "Stronghold"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 44,
+    "name": "Redwyne Straights",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 45,
+    "name": "Salt Shore",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 46,
+    "name": "Starfall",
+    "moveCost": 1,
+    "fieldType": "Castle"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 47,
+    "name": "The Arbor",
+    "moveCost": 1,
+    "fieldType": "Terrain"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 48,
+    "name": "West Summer Sea",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 49,
+    "name": "East Summer Sea",
+    "moveCost": 1,
+    "fieldType": "OpenSea"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 50,
+    "name": "Winterfell Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 51,
+    "name": "White Harbor Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 52,
+    "name": "Pyke Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 53,
+    "name": "Lannisport Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 54,
+    "name": "Dragonstone Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 55,
+    "name": "Storms End Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 56,
+    "name": "Oldtown Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  },
+  {
+    "neighborFieldIds": [],
+    "id": 57,
+    "name": "Sunspear Port",
+    "moveCost": 1,
+    "fieldType": "Port"
+  }
+]
